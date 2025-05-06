@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .chart{
+            margin: 20px;
+            flex-wrap: wrap;
+            box-shadow: 0 10px 20px rgb(0, 0, 0);
+            padding: 30px;
+        }
+        .dashboard{
+            flex-wrap: wrap;
+            display: flex;
+            justify-self: center;
+        }
+        .card{
+            flex-wrap: wrap;
+            display: flex;
+            justify-self: center;
+        }
+        .card_sixe{
+            margin: 20px;
+            flex-wrap: wrap;
+            width: 150px;
+            padding: 30px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+            border-radius: 20px;
+            
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h1 style="text-align: center; background-color: blanchedalmond;">Welcome to SALES DASHBOARD</h1>
+    <div class="card">
+        <div class="card_sixe">
+        <h3>Hello</h3>
+        </div>
+        <div class="card_sixe">
+            <h3>Hello</h3>
+        </div>
+        <div class="card_sixe">
+            <h3>Hello</h3>
+        </div>
+        <div class="card_sixe">
+            <h3>Hello</h3>
+        </div>
+        <div class="card_sixe">
+            <h3>Hello</h3>
+        </div>
+    </div>
+    <div class="dashboard">
+        <div class="chart">
+            <h1>BAR CHART</h1>
+            <canvas id="barChart"></canvas>
+        </div>
+        <div class="chart">
+            <h1>PIE CHART</h1>
+            <canvas id="pieChart"></canvas>
+        </div>
+        <div class="chart">
+            <h1>PIE CHART</h1>
+            <canvas id="pieChart2"></canvas>
+        </div>
+    </div>
+    <script>
+        const barCtx=document.getElementById('barChart').getContext('2d');
+        new Chart(barCtx,{
+            type:'bar',
+            data:{
+                labels:['JAN','FEB','MAR'],
+                datasets:[{
+                    label:'Sales Bar',
+                    data:[10,5,20],
+                    backgroundColor:'#3498db'
+                }]
+            },
+            options:{
+                responsive:true,
+                scale:{
+                    y:{
+                        beginAtZero:true
+                    }
+                }
+            }
+        })
+
+        const pieCtx=document.getElementById('pieChart').getContext('2d');
+        new Chart(pieCtx,{
+            type:'pie',
+            data:{
+                labels:['MUMBAI','PUNE','AHMEDNAGAR'],
+                datasets:[{
+                    label:'Pie Chart Sale',
+                    data:[25,45,30],
+                    backgroundColor:['#3498db', '#2ecc71', '#e74c3c']
+                    }]
+                },
+                options:{
+                    responsive:true
+                }
+        })
+
+        const pieCtx2=document.getElementById('pieChart2').getContext('2d');
+        new Chart(pieCtx2,{
+            type:'pie',
+            data:{
+                labels:['Profit','Loss'],
+                datasets:[{
+                    label:'Pie Chart Sale',
+                    data:[75,25],
+                    backgroundColor:['#3498db', '#2ecc71']
+                    }]
+                },
+                options:{
+                    responsive:true
+                }
+        })
+    </script>
+</body>
+</html>

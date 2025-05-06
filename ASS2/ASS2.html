@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .struct{
+            align-items: center;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background-color: rgb(255, 184, 184);
+        }
+        .card{
+            display: flex;
+            width: 300px;
+            align-items: center;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgb(0, 0, 0);
+            background-color: rgb(255, 255, 255);
+        }
+        #submit {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: black;
+            color: white;
+            cursor: pointer;
+        }
+
+        #submit:hover {
+            background-color: darkgray;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Fill the below Registration Form </h1>
+    <div class="card">
+        <form id="regForm" method="post">
+            <label for="firstname">Enter your name</label>
+            <input type='text' required><br><br>
+            <label for="lastname">Enter your surname</label>
+            <input type='text' required><br><br>
+            <label for="date">Enter Date</label>
+            <input type="date" required><br><br>
+            <label for="gender">Select your Gender</label>
+            <input type="radio" id="male" value="male" required>Male
+            <input type="radio" id="female" value="female">Female<br><br>
+            <label for="email">Enter your email_id</label>
+            <input type="email" required><br><br>
+            
+            <input type="submit" id="submit" value="submit">
+        </form>
+    </div>
+    <script>
+        document.getElementById('regForm').addEventListener('submit',function(event){
+            event.preventDefault(); 
+            alert("Registration done !!!")
+        })
+    </script>
+</body>
+</html>
